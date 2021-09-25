@@ -18,12 +18,12 @@
 
 3. У выніку павінен з'явіцца example.cmd, які далей будзе выкарыстоўвацца.
 
-### Linux і мб Mac OS + іншыя Unix/*nix
+### Linux
+
+(Павінны быць усталяваны python3, python3-pip і python3-venv (у залежнасці ад дыстрыбутыва, назвы і набор пакетаў могуць адрознівацца. Fedora не патрабуе даўсталёўкі залежнасцей)
 
 ```shell
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+python3 install.py
 ```
 
 ## Выкарыстоўванне
@@ -31,32 +31,39 @@ pip install -r requirements.txt
 ### Windows
 
 1. Адкрыць example.cmd праз любы рэдактар тэксту, адрэдагаваць наступны блок:
-   ```
+   ```batch
    set TITLE="ПРЫКЛАД"
    set FORMAT="SUB/DUB"
    set CATEGORY="ANIME/CINEMA"
    set SUBCATEGORY="SERIAL/MOVIE"
    ```
 
-   - TITLE — назва тайтла
-   
-   - FORMAT — выбар субцітры/агучка (`SUB`/`DUB` адпаведна), заставіць толькі нешта адно.
-   
-   - CATEGORY — выбар анімэ/кіно (`ANIME`/`CINEMA` адпаведна), заставіць толькі нешта адно.
-   
-   - SUBCATEGORY — выбар шматсерыйны/аднасерыйны тайтл (`SERIAL`/`MOVIE` адпаведна), заставіць толькі нешта адно.
-
 2. Перацягнуць скрыншот на адрэдагаваны файл:
    
    ![гіфка](https://i.imgur.com/xeFWFkj.gif)
 
-### Linux і мб Mac OS + іншыя Unix/*nix
+### Linux
 
+Адкрыць згенерыраван example.sh праз тэкставы рэдактар, змяніць пад сябе наступныя радкі:
 ```shell
-source venv/bin/activate
 export TITLE="ПРЫКЛАД"
 export FORMAT="SUB/DUB"
 export CATEGORY="ANIME/CINEMA"
 export SUBCATEGORY="SERIAL/MOVIE"
-python main.py "$PWD" "$TITLE" "$FORMAT" "$CATEGORY" "$SUBCATEGORY" "<шлях да выявы>"
 ```
+
+Запусціць скрыпт, перадаўшы шлях да выявы як аргумент (можна некалькі запар):
+```shell
+./example.sh title-1.jpg
+./example.sh title-2.jpg title-3.jpg
+```
+
+### Апісанне параметраў:
+
+- TITLE — назва тайтла
+
+- FORMAT — выбар субцітры/агучка (`SUB`/`DUB` адпаведна), заставіць толькі нешта адно.
+
+- CATEGORY — выбар анімэ/кіно (`ANIME`/`CINEMA` адпаведна), заставіць толькі нешта адно.
+
+- SUBCATEGORY — выбар шматсерыйны/аднасерыйны тайтл (`SERIAL`/`MOVIE` адпаведна), заставіць толькі нешта адно.

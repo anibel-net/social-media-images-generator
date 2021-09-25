@@ -139,4 +139,6 @@ dmypy.json
 cython_debug/
 
 # Custom
+.idea
 example.cmd
+example.sh
